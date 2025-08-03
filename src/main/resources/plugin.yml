@@ -1,0 +1,28 @@
+name: CookieTycoon
+version: '1.0'
+main: com.tools.cookieTycoon.CookieTycoon
+api-version: '1.16'
+authors: [ tools ]
+description: Cookie Clicker in Minecraft!
+commands:
+  ck:
+    description: "Admin commands"
+    aliases: [ct]
+    default: op
+    permission: cookietycoon.admin
+    usage: "idk"
+  info:
+    description: "Admin command"
+    aliases: [inf]
+    permission: cookietycoon.info
+  menu:
+    description: "Menu"
+  upgrade:
+    description: "Admin commands"
+    aliases: [upgrades, ups]
+  rebirth:
+    description: "Rebirth command"
+    aliases: [rb]
+  ach:
+    description: "Buy achievements"
+    aliases: [achievement, achievements, achs, achieves]
