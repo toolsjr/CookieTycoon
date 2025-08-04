@@ -15,11 +15,10 @@ public class ConfigManager {
     private File configFile;
 
     public ConfigManager (CookieTycoon plugin) {
-        FileConfiguration config = YamlConfiguration.loadConfiguration(configFile);
         this.plugin = plugin;
     }
 
-    private void createConfig() {
+    public void createConfig() {
         configFile = new File(plugin.getDataFolder(), "config.yml");
         if (!configFile.exists()) {
             configFile.getParentFile().mkdirs();

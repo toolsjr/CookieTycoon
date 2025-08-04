@@ -35,12 +35,16 @@ public final class CookieTycoon extends JavaPlugin {
     @Override
     public void onEnable() {
 
+        configManager = new ConfigManager(this);
+        configManager.createConfig();
+
         String connectionString =  configManager.getConfig().getString("connection-string", "mongodb://localhost:27017/");
         String databaseName =  configManager.getConfig().getString("db-name", "cookieTycoon");
 
+        getServer().getMessenger().registerOutgoingPluginChannel(this, "toolshud:cookie_data");
+
         instance = this;
 
-        configManager = new ConfigManager(this);
         this.database = new DatabaseManager(this, connectionString, databaseName);
         this.timeTracker = new TimeTracker(this);
         this.achievementManager = new AchievementManager(this);
